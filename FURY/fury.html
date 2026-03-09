@@ -979,7 +979,10 @@
     function showPage(id) {
       document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
       var el = document.getElementById('page-' + id);
-      if (el) el.classList.add('active');
+      if (el) {
+        el.classList.add('active');
+        window.scrollTo(0, 0);
+      }
       history.pushState(null, '', '#' + id);
       document.getElementById('navToggle') && document.getElementById('mainNav').classList.remove('is-open');
     }
