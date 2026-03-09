@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PestPro (Failsafe) | Pest Control & Exterminator | [Your State]</title>
+  <style>
+    /* Theme: Top = deep blue + white/blue accent (no gold). Save $50 = gold. Our Services down = green. Footer = black/gold/white. */
+    :root {
+      --black: #040404;
+      --black-soft: #141414;
+      --blue-top: #1e3a5f;
+      --blue-top-dark: #0f172a;
+      --accent-top: #60a5fa;
+      --green: #166534;
+      --green-dark: #14532d;
+      --gold: #d8ab4e;
+      --gold-dark: #b48c36;
+      --pest-bg: #f8f9fa;
+      --color-text-on-dark: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 1rem; line-height: 1.5; color: var(--black); background: var(--pest-bg); }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--green-dark); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    .section { padding: 3rem 0; }
+    .section--dark { background: var(--black); color: var(--color-text-on-dark); }
+    .section--dark a { color: var(--gold); }
+    .section--dark .section-title { color: var(--color-text-on-dark); }
+    .section--dark .btn--primary { background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--black); border: none; }
+    .section--dark .btn--primary:hover { opacity: 0.92; }
+
+    .topbar { background: var(--black); color: var(--color-text-on-dark); padding: 0.5rem 0; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .topbar .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+    .topbar a { color: inherit; }
+    .topbar-phone { font-weight: 700; font-size: 1.1rem; color: var(--accent-top); }
+    .topbar-cta { background: var(--accent-top); color: var(--blue-top-dark); padding: 0.35rem 0.75rem; border-radius: 4px; font-weight: 600; }
+    .topbar-cta:hover { text-decoration: none; opacity: 0.9; color: var(--blue-top-dark); }
+
+    .site-header { background: var(--blue-top); color: var(--color-text-on-dark); padding: 0.75rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(15,23,42,0.25); border-bottom: 2px solid rgba(255,255,255,0.15); }
+    .site-header a { color: inherit; }
+    .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { font-size: 1.35rem; font-weight: 800; color: #fff; }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1.5rem; list-style: none; margin: 0; padding: 0; }
+    .nav a { padding: 0.35rem 0; font-weight: 500; }
+    .nav a:hover { color: var(--accent-top); }
+    .nav-toggle { display: none; background: none; border: none; color: inherit; font-size: 1.25rem; cursor: pointer; }
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav { display: none; width: 100%; flex-direction: column; padding-top: 0.5rem; }
+      .nav.is-open { display: flex; }
+    }
+
+    .hero { background: linear-gradient(165deg, var(--black) 0%, var(--blue-top-dark) 50%, var(--blue-top) 100%); color: var(--color-text-on-dark); padding: 3.5rem 0 4.5rem; text-align: center; }
+    .hero h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; margin: 0 0 0.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+    .hero .tagline { font-size: 1.1rem; opacity: 0.92; margin-bottom: 1.5rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+    .hero .zip-form { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 320px; margin: 0 auto; }
+    .hero .zip-form input { padding: 0.6rem 1rem; font-size: 1rem; border: 2px solid rgba(255,255,255,0.35); border-radius: 4px; width: 140px; background: rgba(255,255,255,0.08); color: #fff; }
+    .hero .zip-form input::placeholder { color: rgba(255,255,255,0.55); }
+    .hero .zip-form button { padding: 0.6rem 1.25rem; font-size: 1rem; font-weight: 600; background: var(--accent-top); color: var(--blue-top-dark); border: none; border-radius: 4px; cursor: pointer; }
+    .hero .zip-form button:hover { opacity: 0.9; }
+    .hero .btn--urgent { background: var(--accent-top); color: var(--blue-top-dark); }
+    .hero .btn--urgent:hover { opacity: 0.9; }
+    .hero .btn--primary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.8); }
+    .hero .btn--primary:hover { background: rgba(255,255,255,0.15); border-color: #fff; opacity: 1; }
+
+    .btn { display: inline-block; padding: 0.6rem 1.25rem; font-size: 1rem; font-weight: 600; border-radius: 4px; border: none; cursor: pointer; text-decoration: none; text-align: center; transition: opacity 0.2s, background 0.2s; }
+    .btn:hover { text-decoration: none; }
+    .btn--primary { background: var(--green); color: #fff; }
+    .btn--primary:hover { opacity: 0.95; background: var(--green-dark); }
+    .btn--urgent { background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--black); }
+    .btn--urgent:hover { opacity: 0.92; }
+    .btn--outline { background: transparent; color: var(--color-text-on-dark); border: 2px solid var(--accent-top); }
+    .btn--outline:hover { background: rgba(96,165,250,0.2); color: var(--accent-top); opacity: 1; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .service-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(20,83,45,0.14); border-color: var(--gold); }
+    .service-card__image { height: 180px; background: linear-gradient(145deg, var(--green) 0%, var(--green-dark) 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 2.5rem; }
+    .service-card__body { padding: 1.5rem; }
+    .service-card__title { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.5rem; color: var(--green-dark); }
+    .service-card__text { margin: 0 0 1rem; font-size: 0.9rem; color: #444; line-height: 1.5; }
+    .service-card .btn { width: 100%; }
+
+    .section-title { font-size: clamp(1.4rem, 2.8vw, 1.85rem); font-weight: 700; margin: 0 0 0.5rem; text-align: center; color: var(--green-dark); letter-spacing: -0.02em; }
+    .section-subtitle { text-align: center; margin: 0 0 2rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #5c5c5c; font-size: 0.95rem; }
+    .guarantee { text-align: center; padding: 2.5rem 1.5rem; background: linear-gradient(180deg, var(--blue-top-dark) 0%, var(--blue-top) 100%); color: var(--color-text-on-dark); border-radius: 8px; border: 2px solid rgba(255,255,255,0.2); }
+    .guarantee h2 { font-size: 1.35rem; margin: 0 0 0.5rem; font-weight: 700; color: var(--accent-top); }
+    .guarantee p { margin: 0; opacity: 0.92; font-size: 0.95rem; }
+    .promo-strip { background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold) 100%); color: var(--black); padding: 1rem; text-align: center; font-weight: 600; border-top: 1px solid rgba(0,0,0,0.06); }
+    .promo-strip a { color: var(--black); font-weight: 700; text-decoration: underline; }
+
+    .site-footer { background: var(--black); color: rgba(255,255,255,0.88); padding: 2.5rem 0 1.5rem; font-size: 0.9rem; border-top: 1px solid rgba(216,171,78,0.25); }
+    .site-footer a { color: var(--gold); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-grid h3 { font-size: 1rem; margin: 0 0 0.75rem; color: var(--gold); }
+    .footer-grid ul { list-style: none; margin: 0; padding: 0; }
+    .footer-grid li { margin-bottom: 0.35rem; }
+    .footer-bottom { padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); text-align: center; opacity: 0.8; color: rgba(255,255,255,0.75); }
+
+    .page-header { background: linear-gradient(180deg, var(--black) 0%, var(--green-dark) 100%); color: var(--color-text-on-dark); padding: 2rem 0; border-bottom: 3px solid var(--gold); }
+    .page-header h1 { margin: 0; font-size: 1.65rem; font-weight: 700; letter-spacing: -0.02em; }
+    .content { padding: 2rem 0; }
+    .content h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; color: var(--green); font-weight: 700; }
+    .content p { margin: 0 0 1rem; }
+    .content ul { margin: 0 0 1rem; padding-left: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; max-width: 400px; padding: 0.5rem 0.75rem; font-size: 1rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; background: #fff; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    .pest-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 0; }
+    .pest-list li { background: #fff; border-radius: 6px; padding: 1rem; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .pest-list a { font-weight: 600; color: var(--green-dark); }
+    .pest-list a:hover { color: var(--gold-dark); }
+
+    .page { display: none; }
+    .page.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Service Area: <strong>[Your State]</strong></span>
+      <a href="tel:5551234567" class="topbar-phone">Call (555) 123-4567</a>
+      <a href="#" class="topbar-cta" data-page="get-a-quote">Get a Free Quote</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" data-page="home">PestPro</a>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" id="navToggle">☰</button>
+      <nav class="nav" id="mainNav">
+        <a href="#" data-page="pest-control">Pest Control</a>
+        <a href="#" data-page="termite-control">Termite Control</a>
+        <a href="#" data-page="pest-library">Pest Library</a>
+        <a href="#" data-page="about">Our Difference</a>
+        <a href="#" data-page="contact">Contact</a>
+        <a href="#" class="btn btn--outline" style="margin-left: 0.5rem;" data-page="get-a-quote">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="container">
+        <h1>The Pest Pros.<br>Trusted Across [Your State].</h1>
+        <p class="tagline">Get a personalized quote today. We're here for you 24/7.</p>
+        <div class="hero-actions">
+          <a href="tel:5551234567" class="btn btn--urgent">Call (555) 123-4567</a>
+          <a href="#" class="btn btn--primary" data-page="get-a-quote">Get a Free Quote</a>
+        </div>
+        <p><strong>Find pest control near you.</strong> We serve [Your State] with local, expert service.</p>
+        <form class="zip-form" onsubmit="event.preventDefault(); showPage('get-a-quote');">
+          <input type="text" placeholder="Enter your ZIP code" maxlength="10" aria-label="ZIP code">
+          <button type="submit">Find Service</button>
+        </form>
+      </div>
+    </section>
+    <div class="promo-strip">
+      <div class="container">Save $50 on pest control and prevention. Use code <strong>50OFF</strong>. <a href="#" data-page="get-a-quote">Get a free quote →</a></div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Specialized prevention and a targeted plan. Experience solving pest problems across [Your State].</p>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-card__image" aria-hidden="true">🐜</div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Targeted Pest Control</h3>
+              <p class="service-card__text">Laser-focused treatments to rid your home of pests quickly and effectively.</p>
+              <a href="#" class="btn btn--primary" data-page="pest-control">Get Pest Control</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card__image" aria-hidden="true">🦟</div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Mosquito Control</h3>
+              <p class="service-card__text">Take back your yard. Seasonal mosquito control targets where they breed.</p>
+              <a href="#" class="btn btn--primary" data-page="pest-control">Get Mosquito Control</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card__image" aria-hidden="true">🛡️</div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Preventative Pest Control</h3>
+              <p class="service-card__text">Proactive prevention keeps your home safe from invasion across all seasons.</p>
+              <a href="#" class="btn btn--primary" data-page="pest-control">Get Pest Prevention</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card__image" aria-hidden="true">🐛</div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Termite Control</h3>
+              <p class="service-card__text">Tailored, safe treatments. We stop termites and protect your property.</p>
+              <a href="#" class="btn btn--primary" data-page="termite-control">Get Termite Control</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="guarantee">
+          <h2>The PestPro Guarantee</h2>
+          <p><strong>We're not happy until you're happy.</strong></p>
+          <p>Off-schedule return visits and a 30-day satisfaction guarantee. Keeping your home safe is what we do best.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section section--dark">
+      <div class="container" style="text-align: center;">
+        <h2 class="section-title">Identify and Protect</h2>
+        <p>Browse our pest library to learn about common [Your State] pests.</p>
+        <a href="#" class="btn btn--primary" style="margin-top: 1rem;" data-page="pest-library">Browse Pest Library</a>
+        <p style="margin-top: 2rem;">We're here 24/7. <a href="tel:5551234567">Call (555) 123-4567</a></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- PEST CONTROL -->
+  <div id="page-pest-control" class="page">
+    <section class="page-header"><div class="container"><h1>Pest Control</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">Targeted treatments to get pests out and keep them out across [Your State].</p></div></section>
+    <section class="section content">
+      <div class="container">
+        <p>Our pest control service combines proven methods and technology. Every plan is customized for your home and the pests common in [Your State].</p>
+        <h2>Targeted Pest Control</h2>
+        <p>We identify the pest, locate entry points, and apply targeted treatments so you get results without unnecessary chemicals.</p>
+        <h2>Mosquito Control</h2>
+        <p>Seasonal mosquito control focuses on where they breed and rest around your property.</p>
+        <h2>Preventative Pest Control</h2>
+        <p>Ongoing prevention keeps pests from coming back with follow-up visits and sealing entry points.</p>
+        <h2>Common Pests We Treat</h2>
+        <p>Ants, cockroaches, spiders, rodents, mosquitoes, and more. <a href="#" data-page="pest-library">Browse our pest library</a>.</p>
+        <div style="margin-top: 2rem;">
+          <a href="#" class="btn btn--urgent" data-page="get-a-quote">Get a Free Quote</a>
+          <a href="tel:5551234567" class="btn btn--primary" style="margin-left: 0.5rem;">Call (555) 123-4567</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TERMITE CONTROL -->
+  <div id="page-termite-control" class="page">
+    <section class="page-header"><div class="container"><h1>Termite Control</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">Safe, comprehensive termite treatment tailored to your home in [Your State].</p></div></section>
+    <section class="section content">
+      <div class="container">
+        <p>Termites can cause serious damage before you see them. Our service finds, treats, and prevents termites.</p>
+        <h2>Inspection & Treatment</h2>
+        <p>We start with a thorough inspection, then recommend a plan—bait systems, liquid treatments, or both—tailored to your property.</p>
+        <h2>Safe for Your Family & Pets</h2>
+        <p>We use EPA-approved products and methods. Our technicians minimize exposure while effectively controlling termites.</p>
+        <h2>Ongoing Protection</h2>
+        <p>Many plans include follow-up visits and monitoring. Ask us about our warranty and maintenance options.</p>
+        <p><strong>Spotted mud tubes or damaged wood?</strong> Contact us for a free inspection.</p>
+        <div style="margin-top: 2rem;">
+          <a href="#" class="btn btn--urgent" data-page="get-a-quote">Get a Free Quote</a>
+          <a href="tel:5551234567" class="btn btn--primary" style="margin-left: 0.5rem;">Call (555) 123-4567</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PEST LIBRARY -->
+  <div id="page-pest-library" class="page">
+    <section class="page-header"><div class="container"><h1>Pest Library</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">Identify common pests in [Your State] and learn how we treat them.</p></div></section>
+    <section class="section content">
+      <div class="container">
+        <p>Not sure what you're dealing with? Browse our pest library. We start with science—then we get rid of the problem.</p>
+        <h2>Browse All Pests</h2>
+        <ul class="pest-list">
+          <li><a href="#">Ants</a> – Carpenter ants, fire ants, and more</li>
+          <li><a href="#">Bed Bugs</a> – Identification and treatment</li>
+          <li><a href="#">Cockroaches</a> – German, American, and other species</li>
+          <li><a href="#">Mosquitoes</a> – Breeding habits and control</li>
+          <li><a href="#">Rodents</a> – Mice and rats</li>
+          <li><a href="#">Spiders</a> – Common house and venomous species</li>
+          <li><a href="#">Termites</a> – Subterranean and drywood</li>
+          <li><a href="#">Fleas & Ticks</a> – Pet and yard protection</li>
+          <li><a href="#">Stinging Insects</a> – Wasps, hornets, bees</li>
+        </ul>
+        <p style="margin-top: 2rem;">Have a pest you don't see here? <a href="#" data-page="contact">Contact us</a> with a photo or description.</p>
+        <a href="#" class="btn btn--primary" data-page="get-a-quote" style="margin-top: 1rem;">Get a Free Quote</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="page-about" class="page">
+    <section class="page-header"><div class="container"><h1>Our Difference</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">Why [Your State] homeowners choose PestPro.</p></div></section>
+    <section class="section content">
+      <div class="container">
+        <p>We're a [Your State] pest control company that knows your area, your pests, and your expectations.</p>
+        <h2>Local Expertise</h2>
+        <p>We live and work in [Your State]. We know which pests are active when and which treatments work best in our climate.</p>
+        <h2>Custom Plans</h2>
+        <p>Every home is different. We inspect, identify, and build a plan that fits your property and budget.</p>
+        <h2>Guaranteed Satisfaction</h2>
+        <p>Off-schedule return visits and a 30-day money-back guarantee. Your peace of mind is our priority.</p>
+        <h2>Safe & Responsible</h2>
+        <p>We use EPA-approved products and methods that are effective while minimizing risk to your family and pets.</p>
+        <div style="margin-top: 2rem;">
+          <a href="#" class="btn btn--urgent" data-page="get-a-quote">Get a Free Quote</a>
+          <a href="#" class="btn btn--primary" data-page="contact" style="margin-left: 0.5rem;">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="page-contact" class="page">
+    <section class="page-header"><div class="container"><h1>Contact Us</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">We're here 24/7 for [Your State].</p></div></section>
+    <section class="section content">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <h2>Get in Touch</h2>
+            <p><strong>Phone:</strong> <a href="tel:5551234567">(555) 123-4567</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@pestpro.example.com">info@pestpro.example.com</a></p>
+            <p><strong>Address:</strong><br>[Your business address]<br>[City], [Your State] [ZIP]</p>
+            <p><strong>Service area:</strong> [Your State]</p>
+          </div>
+          <div>
+            <h2>Send a Message</h2>
+            <form action="#" method="post">
+              <div class="form-group"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
+              <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
+              <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
+              <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" rows="4" required></textarea></div>
+              <button type="submit" class="btn btn--primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- GET A QUOTE -->
+  <div id="page-get-a-quote" class="page">
+    <section class="page-header"><div class="container"><h1>Get a Free Quote</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">Tell us about your pest problem. We'll get back to you with a personalized quote.</p></div></section>
+    <section class="section content">
+      <div class="container">
+        <p>Fill out the form below or call us at <a href="tel:5551234567">(555) 123-4567</a>.</p>
+        <form action="#" method="post" style="max-width: 520px; margin-top: 1.5rem;">
+          <div class="form-group"><label for="q-name">Name *</label><input type="text" id="q-name" name="name" required></div>
+          <div class="form-group"><label for="q-email">Email *</label><input type="email" id="q-email" name="email" required></div>
+          <div class="form-group"><label for="q-phone">Phone *</label><input type="tel" id="q-phone" name="phone" required></div>
+          <div class="form-group"><label for="q-zip">ZIP code *</label><input type="text" id="q-zip" name="zip" placeholder="We serve [Your State]" required></div>
+          <div class="form-group">
+            <label for="q-service">Service interested in</label>
+            <select id="q-service" name="service">
+              <option value="">Select one</option>
+              <option value="pest-control">Pest Control</option>
+              <option value="termite">Termite Control</option>
+              <option value="mosquito">Mosquito Control</option>
+              <option value="prevention">Preventative / Ongoing</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="q-notes">Tell us about your pest problem</label><textarea id="q-notes" name="notes" rows="4" placeholder="e.g. ants in kitchen, termites suspected"></textarea></div>
+          <button type="submit" class="btn btn--urgent">Request Free Quote</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h3>Services</h3><ul><li><a href="#" data-page="pest-control">Pest Control</a></li><li><a href="#" data-page="termite-control">Termite Control</a></li></ul></div>
+        <div><h3>Pest Library</h3><ul><li><a href="#" data-page="pest-library">Browse All Pests</a></li></ul></div>
+        <div><h3>Company</h3><ul><li><a href="#" data-page="about">Our Difference</a></li><li><a href="#" data-page="contact">Contact</a></li><li><a href="#" data-page="get-a-quote">Get a Quote</a></li></ul></div>
+        <div><h3>Customer Care</h3><ul><li><a href="tel:5551234567">(555) 123-4567</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 PestPro. Serving [Your State]. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+      var el = document.getElementById('page-' + id);
+      if (el) el.classList.add('active');
+      history.replaceState(null, '', '#' + id);
+      document.getElementById('navToggle') && document.getElementById('mainNav').classList.remove('is-open');
+    }
+    document.querySelectorAll('[data-page]').forEach(function(a) {
+      a.addEventListener('click', function(e) { e.preventDefault(); showPage(this.getAttribute('data-page')); });
+    });
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('is-open');
+    });
+    if (location.hash) showPage(location.hash.slice(1));
+    window.addEventListener('hashchange', function() { if (location.hash) showPage(location.hash.slice(1)); });
+  </script>
+</body>
+</html>

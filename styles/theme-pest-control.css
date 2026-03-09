@@ -1,0 +1,31 @@
+/**
+ * Pest Control – Trust-building blue & green
+ * From Hook Agency: 50 Beautiful Website Color Schemes
+ * https://hookagency.com/blog/website-color-schemes-2020/
+ */
+
+:root {
+  /* Primary */
+  --pest-primary: #1561ad;
+  --pest-primary-muted: #1c77ac;
+  --pest-accent: #1dbab4;
+  --pest-cta: #fc5226;
+  --pest-dark: #33363b;
+  --pest-bg: #eaeaea;
+
+  /* Optional semantic names */
+  --color-header: var(--pest-primary);
+  --color-button: var(--pest-accent);
+  --color-button-urgent: var(--pest-cta);
+  --color-text-on-dark: #ffffff;
+  --color-text: var(--pest-dark);
+  --color-background: var(--pest-bg);
+}
+
+/* Example usage (uncomment or copy into your main CSS) */
+/*
+.header { background-color: var(--pest-primary); color: var(--color-text-on-dark); }
+.btn-primary { background-color: var(--pest-accent); color: white; }
+.btn-cta { background-color: var(--pest-cta); color: white; }
+body { background-color: var(--pest-bg); color: var(--pest-dark); }
+*/
