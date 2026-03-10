@@ -1,8 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/fury.html"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }

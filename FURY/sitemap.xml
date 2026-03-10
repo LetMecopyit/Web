@@ -5,132 +5,132 @@
 
   <!-- ===== MAIN PAGES ===== -->
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/index.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#blog</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/blog/index.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-library</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-library.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#about</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/our-difference.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pestcontrol.performaze.com/about-us.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#about-us</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#contact</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/contact.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#get-a-quote</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/get-a-quote.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- ===== PEST LIBRARY — DETAIL PAGES ===== -->
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-ants</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-ants.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-bed-bugs</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-bed-bugs.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-cockroaches</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-cockroaches.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-mosquitoes</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-mosquitoes.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-rodents</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-rodents.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-spiders</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-spiders.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-termites</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-termites.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-fleas-ticks</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-fleas-ticks.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-stinging-insects</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-stinging-insects.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#pest-silverfish</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://pestcontrol.performaze.com/pest-silverfish.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- ===== BLOG ARTICLES ===== -->
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#blog-philadelphia</loc>
-    <lastmod>2026-03-05</lastmod>
+    <loc>https://pestcontrol.performaze.com/blog/philadelphia-pest-control.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#blog-new-york</loc>
-    <lastmod>2026-02-28</lastmod>
+    <loc>https://pestcontrol.performaze.com/blog/new-york-pest-control.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#blog-houston</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://pestcontrol.performaze.com/blog/houston-pest-control.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pestcontrol.performaze.com/fury.html#blog-los-angeles</loc>
-    <lastmod>2026-02-15</lastmod>
+    <loc>https://pestcontrol.performaze.com/blog/los-angeles-pest-control.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
