@@ -1,0 +1,71 @@
+name: IndexNow Auto-Submit
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'FURY/**/*.html'
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            FURY/**/*.html
+
+      - name: Submit to IndexNow
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          ALL_MODIFIED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          echo "Files changed: $ALL_MODIFIED_FILES"
+          
+          URL_LIST=""
+          for file in $ALL_MODIFIED_FILES; do
+            if [ -f "$file" ]; then
+              # Strip the "FURY/" prefix for the absolute URL construction
+              url_path=${file#FURY/}
+              if [ -n "$URL_LIST" ]; then
+                URL_LIST="$URL_LIST,"
+              fi
+              URL_LIST="$URL_LIST\"https://pestcontrol.performaze.com/$url_path\""
+            fi
+          done
+          
+          if [ -n "$URL_LIST" ]; then
+            cat <<EOF > payload.json
+          {
+            "host": "pestcontrol.performaze.com",
+            "key": "27df659bb3454147a6c06983ac91f558",
+            "keyLocation": "https://pestcontrol.performaze.com/27df659bb3454147a6c06983ac91f558.txt",
+            "urlList": [$URL_LIST]
+          }
+          EOF
+            
+            echo "Sending Payload:"
+            cat payload.json
+            
+            HTTP_RESPONSE=$(curl -s -o response.txt -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" -d @payload.json)
+            
+            echo "HTTP Status Code: $HTTP_RESPONSE"
+            cat response.txt
+            
+            if [ "$HTTP_RESPONSE" -eq 200 ] || [ "$HTTP_RESPONSE" -eq 202 ]; then
+              echo "Successfully submitted to IndexNow."
+            else
+              echo "Failed to submit to IndexNow."
+              exit 1
+            fi
+          else
+            echo "No existing HTML files were modified (they might have been deleted only)."
+          fi
