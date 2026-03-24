@@ -122,6 +122,19 @@
     <priority>0.8</priority>
   </url>
 
+    <url>
+    <loc>https://pestcontrol.performaze.com/pest-rodents/mouse.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pestcontrol.performaze.com/pest-rodents/house-rat.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ===== LOCATION PAGES ===== -->
   <url>
     <loc>https://pestcontrol.performaze.com/locations.html</loc>
