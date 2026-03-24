@@ -154,7 +154,13 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ===== BLOG ARTICLES ===== -->
+    <url>
+    <loc>https://pestcontrol.performaze.com/columbus.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+\n  <!-- ===== BLOG ARTICLES ===== -->
   <url>
     <loc>https://pestcontrol.performaze.com/blog/philadelphia-pest-control.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -187,4 +193,10 @@
     <priority>0.8</priority>
   </url>
 
-</urlset>
+  <url>
+    <loc>https://pestcontrol.performaze.com/blog/columbus-pest-control.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+\n</urlset>
