@@ -12,8 +12,8 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | PestPro</title>
-  <meta name="description" content="Contact PestPro for 24/7 pest control service and support.">
+  <title>Locations | Service Areas | PestPro</title>
+  <meta name="description" content="Find professional pest control services in Los Angeles, Houston, New York City, and Philadelphia.">
   <meta name="keywords" content="pest control, exterminator, pest control near me, termite control, ant control, mosquito control, rodent control, pest removal, pest prevention, USA pest control">
   <meta name="robots" content="index, follow">
   <meta name="author" content="PestPro">
@@ -22,13 +22,13 @@
   
   
   <meta name="geo.region" content="US">
-  <link rel="canonical" href="https://pestcontrol.performaze.com/contact">
+  <link rel="canonical" href="https://pestcontrol.performaze.com/locations">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Pest Control & Exterminator | PestPro - Serving USA">
   <meta property="og:description" content="Professional pest control and extermination services. Free quote, 24/7. Ants, termites, mosquitoes, rodents.">
-  <meta property="og:url" content="https://pestcontrol.performaze.com/contact">
+  <meta property="og:url" content="https://pestcontrol.performaze.com/pest-library">
   <meta property="og:site_name" content="PestPro">
   <meta property="og:locale" content="en_US">
 
@@ -132,8 +132,8 @@
     .btn--primary:hover { opacity: 0.95; background: var(--green-dark); }
     .btn--urgent { background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--black); }
     .btn--urgent:hover { opacity: 0.92; }
-    .btn--outline { background: transparent; color: var(--color-text-on-dark); border: 2px solid var(--accent-top); }
-    .btn--outline:hover { background: rgba(96,165,250,0.2); color: var(--accent-top); opacity: 1; }
+    .btn--outline { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn--outline:hover { background: var(--green); color: #fff; opacity: 1; }
 
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     .service-card { display: flex; flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
@@ -269,37 +269,64 @@
 
   
   <main>
-<section class="page-header"><div class="container"><h1>Contact Us</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">We're here 24/7 for [Your State].</p></div></section>
-    <section class="section content">
+<section class="page-header"><div class="container"><h1>Our Service Areas</h1><p style="margin: 0.5rem 0 0; opacity: 0.9;">Professional pest control services across our coverage regions.</p></div></section>
+    <section class="section">
       <div class="container">
-        <div class="contact-grid">
-          <div>
-            <h2>Get in Touch</h2>
-            <p><strong>Phone:</strong> <a href="tel:+18445780573">(844) 578-0573</a></p>
-            <p><strong>Email:</strong> <a href="mailto:pestservicesperformaze@gmail.com">pestservicesperformaze@gmail.com</a></p>
-            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pestservicesperformaze/" target="_blank" rel="noopener noreferrer">@pestservicesperformaze</a></p>
-            <p><strong>Address:</strong><br>Philadelphia, PA 19124</p>
-            <p><strong>Service area:</strong> [Your State]</p>
+        <h2 class="section-title" style="margin-bottom:2rem;">Find an Exterminator Near You</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div class="service-card">
+            <div class="service-card__body">
+              <h3 class="service-card__title">Los Angeles</h3>
+              <p class="service-card__text">Expert pest control for coastal, valley, and urban Los Angeles neighborhoods. Specializing in termites, rodents, and ants.</p>
+              <br>
+              <a href="/locations/los-angeles" class="btn btn--outline" style="width:100%;">View LA Services</a>
+            </div>
           </div>
-          <div>
-            <h2>Send a Message</h2>
-            <form id="contactForm" action="#" method="post" onsubmit="handleContactSubmit(event)">
-              <div class="form-group"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
-              <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
-              <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
-              <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" rows="4" required></textarea></div>
-              <button type="submit" class="btn btn--primary">Send Message</button>
-            </form>
-            <div id="contactSuccess" style="display:none;background:linear-gradient(135deg,#14532d,#166534);color:#fff;border-radius:10px;padding:1.5rem 1.75rem;margin-top:1rem;">  
-              <h3 style="margin:0 0 0.5rem;color:#bbf7d0;">Thanks for reaching out!</h3>
-              <p style="margin:0 0 1rem;opacity:0.93;">For the fastest response, please call us directly. Our team is available to help you right now.</p>
-              <a href="tel:+18445780573" class="btn btn--urgent" style="font-size:1.1rem;padding:0.7rem 1.5rem;">&#128222; Call (844) 578-0573</a>
+          <div class="service-card">
+            <div class="service-card__body">
+              <h3 class="service-card__title">Houston</h3>
+              <p class="service-card__text">Gulf Coast pest management for high humidity environments. Exterminators for mosquitoes, cockroaches, and subterranean termites.</p>
+              <br>
+              <a href="/locations/houston" class="btn btn--outline" style="width:100%;">View Houston Services</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card__body">
+              <h3 class="service-card__title">New York City</h3>
+              <p class="service-card__text">Urban pest ecology experts bridging all five boroughs. Targeted solutions for rodents, bed bugs, and cockroaches.</p>
+              <br>
+              <a href="/locations/new-york" class="btn btn--outline" style="width:100%;">View NYC Services</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card__body">
+              <h3 class="service-card__title">Philadelphia</h3>
+              <p class="service-card__text">Historic district and rowhouse pest protection. Dedicated urban control for mice, rats, and structural pests.</p>
+              <br>
+              <a href="/locations/philadelphia" class="btn btn--outline" style="width:100%;">View Philly Services</a>
+            </div>
+          </div>
+                  <div class="service-card">
+            <div class="service-card__body">
+              <h3 class="service-card__title">Pittsburgh</h3>
+              <p class="service-card__text">Urban pest ecology experts bridging hillside housing and river valleys. Dedicated control for rodents and structural pests.</p>
+              <br>
+              <a href="/locations/pittsburgh" class="btn btn--outline" style="width:100%;">View Pittsburgh Services</a>
+            </div>
+          </div>
+        
+          <div class="service-card">
+            <div class="service-card__body">
+              <h3 class="service-card__title">Columbus</h3>
+              <p class="service-card__text">Urban & suburban pest management. Targeted solutions for rodents, ants, and structural pests.</p>
+              <br>
+              <a href="/locations/columbus" class="btn btn--outline" style="width:100%;">View Columbus Services</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </main>
+</main>
 <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
@@ -518,6 +545,9 @@
   
 </body>
 </html>
+
+
+
 
 
 

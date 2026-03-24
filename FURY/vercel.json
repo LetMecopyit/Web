@@ -1,11 +1,52 @@
 {
-  "cleanUrls": false,
+  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/pest-library.html", "destination": "/pest-library", "permanent": true },
+    { "source": "/locations.html", "destination": "/locations", "permanent": true },
+
+    { "source": "/pest-ants.html", "destination": "/pest-library/ants", "permanent": true },
+    { "source": "/pest-ants", "destination": "/pest-library/ants", "permanent": true },
+    { "source": "/pest-bed-bugs.html", "destination": "/pest-library/bed-bugs", "permanent": true },
+    { "source": "/pest-bed-bugs", "destination": "/pest-library/bed-bugs", "permanent": true },
+    { "source": "/pest-cockroaches.html", "destination": "/pest-library/cockroaches", "permanent": true },
+    { "source": "/pest-cockroaches", "destination": "/pest-library/cockroaches", "permanent": true },
+    { "source": "/pest-mosquitoes.html", "destination": "/pest-library/mosquitoes", "permanent": true },
+    { "source": "/pest-mosquitoes", "destination": "/pest-library/mosquitoes", "permanent": true },
+    { "source": "/pest-rodents.html", "destination": "/pest-library/rodents", "permanent": true },
+    { "source": "/pest-rodents", "destination": "/pest-library/rodents", "permanent": true },
+    { "source": "/pest-spiders.html", "destination": "/pest-library/spiders", "permanent": true },
+    { "source": "/pest-spiders", "destination": "/pest-library/spiders", "permanent": true },
+    { "source": "/pest-termites.html", "destination": "/pest-library/termites", "permanent": true },
+    { "source": "/pest-termites", "destination": "/pest-library/termites", "permanent": true },
+    { "source": "/pest-fleas-ticks.html", "destination": "/pest-library/fleas-ticks", "permanent": true },
+    { "source": "/pest-fleas-ticks", "destination": "/pest-library/fleas-ticks", "permanent": true },
+    { "source": "/pest-stinging-insects.html", "destination": "/pest-library/stinging-insects", "permanent": true },
+    { "source": "/pest-stinging-insects", "destination": "/pest-library/stinging-insects", "permanent": true },
+    { "source": "/pest-silverfish.html", "destination": "/pest-library/silverfish", "permanent": true },
+    { "source": "/pest-silverfish", "destination": "/pest-library/silverfish", "permanent": true },
+    { "source": "/pest-centipedes.html", "destination": "/pest-library/centipedes", "permanent": true },
+    { "source": "/pest-centipedes", "destination": "/pest-library/centipedes", "permanent": true },
+
+    { "source": "/pest-ants/fire-ants.html", "destination": "/pest-library/ants/fire-ants", "permanent": true },
+    { "source": "/pest-ants/fire-ants", "destination": "/pest-library/ants/fire-ants", "permanent": true },
+    { "source": "/pest-rodents/mouse.html", "destination": "/pest-library/rodents/mouse", "permanent": true },
+    { "source": "/pest-rodents/mouse", "destination": "/pest-library/rodents/mouse", "permanent": true },
+    { "source": "/pest-rodents/house-rat.html", "destination": "/pest-library/rodents/house-rat", "permanent": true },
+    { "source": "/pest-rodents/house-rat", "destination": "/pest-library/rodents/house-rat", "permanent": true },
+
+    { "source": "/los-angeles.html", "destination": "/locations/los-angeles", "permanent": true },
+    { "source": "/los-angeles", "destination": "/locations/los-angeles", "permanent": true },
+    { "source": "/houston.html", "destination": "/locations/houston", "permanent": true },
+    { "source": "/houston", "destination": "/locations/houston", "permanent": true },
+    { "source": "/new-york.html", "destination": "/locations/new-york", "permanent": true },
+    { "source": "/new-york", "destination": "/locations/new-york", "permanent": true },
+    { "source": "/philadelphia.html", "destination": "/locations/philadelphia", "permanent": true },
+    { "source": "/philadelphia", "destination": "/locations/philadelphia", "permanent": true },
+    { "source": "/pittsburgh.html", "destination": "/locations/pittsburgh", "permanent": true },
+    { "source": "/pittsburgh", "destination": "/locations/pittsburgh", "permanent": true },
+    { "source": "/columbus.html", "destination": "/locations/columbus", "permanent": true },
+    { "source": "/columbus", "destination": "/locations/columbus", "permanent": true }
   ]
 }
